@@ -34,6 +34,7 @@
 - 🧪 Smart detection scripts
 
 Perfect for:
+
 - 👨‍💻 Ethical Hackers
 - 🛡️ Cybersecurity Students
 - 🔍 Red/Blue Teams
@@ -195,6 +196,7 @@ This project is licensed under the [MIT License](LICENSE)
 ## 🖼️ Screenshots & Live Demos
 
 ### 🎞️ GUI in Action
+>
 > A quick look at the user-friendly graphical interface built with Python!
 
 ![GUI Demo](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/YOUR_IMAGE_ID)
@@ -202,6 +204,7 @@ This project is licensed under the [MIT License](LICENSE)
 ---
 
 ### 🛰️ Live Network Scan Detection
+>
 > Real-time scanning detection using `nmap` and Shodan API!
 
 ![Live Scanner Demo](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/YOUR_IMAGE_ID)
@@ -209,6 +212,7 @@ This project is licensed under the [MIT License](LICENSE)
 ---
 
 ### 📁 Auto Logs + Threat Reports
+>
 > Here’s how auto logs get saved and threats are reported!
 
 ![Log Report Example](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/YOUR_IMAGE_ID)
