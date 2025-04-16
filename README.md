@@ -149,6 +149,28 @@ PORT-SCANNER/
 
 ---
 
+## 🛠️ Advanced Usage Examples
+
+### Targeting Specific Ports
+
+To scan specific ports, you can specify the port range in the input field. For example, to scan ports 22 (SSH) and 80 (HTTP), you can enter:
+
+```
+22,80
+```
+
+### Using Nmap Options
+
+You can also utilize various `nmap` options by modifying the command in the `advanced_port_scanner.py` file. For example, to enable OS detection, you can add the `-O` flag:
+
+```python
+subprocess.Popen(["nmap", "-O", target, port_range])
+```
+
+This will provide additional information about the operating system of the target.
+
+---
+
 ## 🐍 GitHub Contribution Snake Animation
 
 Add a dynamic snake animation to your README to showcase your GitHub activity in a fun way.

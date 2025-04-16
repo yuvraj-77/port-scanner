@@ -1,3 +1,9 @@
+"""
+Main GUI for the Advanced Port Scanner and Wireless Attack Tool
+Author: morningstarxcdcode
+Description: Provides a graphical interface for users to perform port scans and wireless attacks.
+"""
+
 import tkinter as tk
 from tkinter import messagebox, ttk
 import threading
@@ -8,7 +14,15 @@ import queue
 from wireless import wireless_attacks
 
 class AnimatedProgressBar(tk.Canvas):
-    def __init__(self, parent, width=700, height=25, max_value=100, **kwargs):
+    def __init__(self, parent: tk.Widget, width: int = 700, height: int = 25, max_value: int = 100, **kwargs):
+        """
+        Initialize the animated progress bar.
+
+        :param parent: The parent widget.
+        :param width: The width of the progress bar.
+        :param height: The height of the progress bar.
+        :param max_value: The maximum value of the progress bar.
+        """
         super().__init__(parent, width=width, height=height, bg="#000000", **kwargs)
         self.width = width
         self.height = height
@@ -17,14 +31,16 @@ class AnimatedProgressBar(tk.Canvas):
         self.rect = self.create_rectangle(0, 0, 0, height, fill="#00FF00")
         self.text = self.create_text(width // 2, height // 2, text="0%", fill="#00FF00", font=("Consolas", 12, "bold"))
 
-    def update_progress(self, value):
+    def update_progress(self, value: int) -> None:
+        """Update the progress bar with the current value."""
         self.progress = value
         fill_width = int(self.width * (self.progress / self.max_value))
         self.coords(self.rect, 0, 0, fill_width, self.height)
         self.itemconfig(self.text, text=f"{int((self.progress / self.max_value) * 100)}%")
         self.update()
 
-def get_local_ip():
+def get_local_ip() -> str:
+    """Retrieve the local IP address of the machine."""
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         s.connect(("8.8.8.8", 80))
@@ -35,10 +51,12 @@ def get_local_ip():
         s.close()
     return ip
 
-def get_default_port_range():
+def get_default_port_range() -> str:
+    """Return the default port range for scanning."""
     return "1-1000"
 
-def run_port_scan():
+def run_port_scan() -> None:
+    """Initiate the port scan based on user input."""
     target = port_target_entry.get().strip()
     port_range = port_range_entry.get().strip()
     if not target:
@@ -53,13 +71,15 @@ def run_port_scan():
     port_elapsed_label.config(text="Elapsed Time: 0.0s")
     start_time = time.time()
 
-    def update_elapsed():
+    def update_elapsed() -> None:
+        """Update the elapsed time label during the scan."""
         while not port_scan_done.is_set():
             elapsed = time.time() - start_time
             port_elapsed_label.config(text=f"Elapsed Time: {elapsed:.1f}s")
             time.sleep(0.1)
 
-    def scan():
+    def scan() -> None:
+        """Perform the port scan using the advanced port scanner script."""
         try:
             process = subprocess.Popen(
                 ["python3", "advanced_port_scanner.py"],
@@ -86,7 +106,7 @@ def run_port_scan():
 
             process.wait()
         except Exception as e:
-            messagebox.showerror("Error", str(e))
+            messagebox.showerror("Error", f"An error occurred during the scan: {str(e)}")
         finally:
             port_scan_done.set()
             elapsed = time.time() - start_time
@@ -99,7 +119,8 @@ def run_port_scan():
     threading.Thread(target=update_elapsed, daemon=True).start()
     threading.Thread(target=scan, daemon=True).start()
 
-def run_wireless_attack():
+def run_wireless_attack() -> None:
+    """Initiate the wireless attack based on user input."""
     target = wireless_target_entry.get().strip()
     if not target:
         messagebox.showerror("Input Error", "Please enter a target IP address.")
@@ -113,7 +134,8 @@ def run_wireless_attack():
 
     log_queue = queue.Queue()
 
-    def log_handler():
+    def log_handler() -> None:
+        """Handle logging output during the wireless attack."""
         while True:
             try:
                 msg = log_queue.get(timeout=0.1)
@@ -123,15 +145,17 @@ def run_wireless_attack():
                 if wireless_attack_done.is_set():
                     break
 
-    def update_elapsed():
+    def update_elapsed() -> None:
+        """Update the elapsed time label during the wireless attack."""
         while not wireless_attack_done.is_set():
             elapsed = time.time() - start_time
             wireless_elapsed_label.config(text=f"Elapsed Time: {elapsed:.1f}s")
             time.sleep(0.1)
 
-    def attack():
+    def attack() -> None:
+        """Perform the wireless attack using the wireless attacks module."""
         class QueueLogger:
-            def info(self, msg):
+            def info(self, msg: str) -> None:
                 log_queue.put(msg)
         logger = QueueLogger()
         try:
@@ -152,6 +176,7 @@ def run_wireless_attack():
     threading.Thread(target=update_elapsed, daemon=True).start()
     threading.Thread(target=attack, daemon=True).start()
 
+# Initialize the main GUI window
 root = tk.Tk()
 root.title("Advanced Port Scanner GUI")
 root.geometry("800x650")

@@ -9,6 +9,7 @@ import socket
 import requests  # type: ignore
 import threading
 from typing import List, Tuple, Optional
+import ipaddress  # Importing ipaddress for IP validation
 
 COMMON_PORTS = [21, 22, 23, 25, 53, 80, 110, 143, 443, 3306, 8080, 8081, 8443, 8888]
 
@@ -35,10 +36,10 @@ def check_vulnerability(service: str) -> str:
         if response.status_code == 200:
             data = response.json()
             if data:
-                return f"\u26a0\ufe0f Vulnerabilities found: {len(data)} (Check CVE database for details)"
-        return "\u2705 No known vulnerabilities found."
+                return f"⚠️ Vulnerabilities found: {len(data)} (Check CVE database for details)"
+        return "✅ No known vulnerabilities found."
     except Exception:
-        return "\u26a0\ufe0f Error checking vulnerabilities."
+        return "⚠️ Error checking vulnerabilities."
 
 def scan_port(target: str, port: int, results: List[Tuple[int, bool, Optional[str], Optional[str]]]) -> None:
     """
@@ -62,7 +63,13 @@ def run_scan(target: str, ports: str = "1-65535", scan_type: str = "all") -> Non
     """
     Scans common ports on the target IP concurrently and prints the results.
     """
-    print(f"\n\ud83d\udd0d Scanning target: {target}\n")
+    # Validate the IP address
+    try:
+        ipaddress.ip_address(target)
+    except ValueError:
+        raise ValueError("Invalid IP address provided.")
+
+    print(f"\nScanning target: {target}\n")
     results: List[Tuple[int, bool, Optional[str], Optional[str]]] = []
     threads = []
     # Parse ports string to list of ints
@@ -96,7 +103,7 @@ def run_scan(target: str, ports: str = "1-65535", scan_type: str = "all") -> Non
         t.join()
     for port, is_open, service, vul_status in sorted(results):
         if is_open:
-            print(f"\u2705 Port {port} is OPEN | Service: {service}")
-            print(f"  \ud83d\udd0e {vul_status}")
+            print(f"✅ Port {port} is OPEN | Service: {service}")
+            print(f"  🔍 {vul_status}")
         else:
-            print(f"\u274c Port {port} is closed")
+            print(f"❌ Port {port} is closed")
