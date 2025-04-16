@@ -87,16 +87,19 @@ PORT-SCANNER/
 ### 🎞️ GUI in Action
 
 **What to Showcase:**
+
 - The main dashboard displaying real-time scan results.
 - Interactive elements like buttons or menus.
 - Any dynamic graphs or charts representing network activity.
 
 **How to Create:**
+
 - Use screen recording tools like **Gifox** (macOS) or **Peek** (Linux) to capture the GUI in action.
 - Keep the recording concise (5-10 seconds) focusing on key interactions.
 - Optimize the GIF to be under 10MB for smooth loading on GitHub.
 
 **Example Placeholder:**
+
 ```markdown
 ![GUI Demo](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/gui-demo.gif)
 ```
@@ -106,15 +109,18 @@ PORT-SCANNER/
 ### 🛰️ Live Network Scan Detection
 
 **What to Showcase:**
+
 - Terminal output during a live scan.
 - Detection of open ports and services.
 - Integration with Shodan API displaying device information.
 
 **How to Create:**
+
 - Record your terminal session using **asciinema** and convert it to an animated SVG using **svg-term-cli**.
 - Alternatively, use screen recording tools to capture the terminal output and convert it to a GIF.
 
 **Example Placeholder:**
+
 ```markdown
 ![Live Scan](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/live-scan.gif)
 ```
@@ -124,16 +130,19 @@ PORT-SCANNER/
 ### 📁 Auto Logs + Threat Reports
 
 **What to Showcase:**
+
 - A sample of the generated CSV or PDF report.
 - Highlighted sections indicating detected threats or anomalies.
 - The process of exporting or viewing reports within the application.
 
 **How to Create:**
+
 - Take high-resolution screenshots of the reports.
 - Annotate or highlight key sections to draw attention.
 - Ensure sensitive information is redacted or anonymized.
 
 **Example Placeholder:**
+
 ```markdown
 ![Threat Report](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/threat-report.png)
 ```
@@ -145,6 +154,7 @@ PORT-SCANNER/
 Add a dynamic snake animation to your README to showcase your GitHub activity in a fun way.
 
 **Steps:**
+
 1. **Set Up the Workflow:**
    - Navigate to your repository's **Actions** tab.
    - Click on **New Workflow** and choose **set up a workflow yourself**.
