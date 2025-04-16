@@ -1,4 +1,6 @@
 nmap
 requests
 shodan
-tk
+tkinter
+fpdf
+pandas
