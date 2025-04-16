@@ -82,139 +82,144 @@ PORT-SCANNER/
 
 ---
 
-## 📸 Screenshots
-
-> Replace the links with your screenshots!
-
-| GUI Dashboard View | Shodan Scan Result | CSV Report |
-|-------------------|--------------------|------------|
-| ![](assets/gui-view.png) | ![](assets/shodan-view.png) | ![](assets/csv-report.png) |
-
----
-
-## ⚡ Usage Instructions
-
-```bash
-# 1. (Optional) Create and activate a virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
-# 2. Navigate to project
-cd PORT-SCANNER
-
-# 3. Install all dependencies
-pip install -r requirements.txt
-
-# 4. Launch CLI Mode
-python main.py
-
-# OR launch GUI Mode
-python gui.py
-```
-
----
-
-## 📊 Example Output (CLI)
-
-```bash
-[INFO] Starting scan on 192.168.0.1...
-[SCAN] Detected open ports: 22, 80, 443
-[SHODAN] Apache httpd 2.4.7 | CVE-2022-23943 found!
-[LOG] Event recorded in /reports/log_2025_04_16.csv
-```
-
----
-
-## 🔁 Roadmap
-
-- [x] GUI Integration
-- [x] PDF Report Generation
-- [x] Shodan Intelligence Feed
-- [ ] 🔐 Firewall Bypass Module (Stealth Scans)
-- [ ] 📡 Wireless Device Fingerprinter
-- [ ] 🎯 CVE Exploit Validator
-- [ ] ⚙️ Plugin System for 3rd-party tools
-
----
-
-## 📬 Contribute Like a Pro
-
-```bash
-# Fork & clone the repo
-git clone https://github.com/morningstarxcdcode/PORT-SCANNER.git
-
-# Create a feature branch
-git checkout -b feature/awesome-upgrade
-
-# Push your changes
-git add .
-git commit -m "Add awesome feature"
-git push origin feature/awesome-upgrade
-
-# Create a Pull Request and level up!
-```
-
----
-
-## 📦 License
-
-This project is licensed under the [MIT License](LICENSE)
-
----
-
-## 🤝 Acknowledgements
-
-- `nmap` – Network scanning engine  
-- `shodan` – Global device search engine  
-- Python community – For keeping security open-source and 🔥  
-- You – For using and improving this project!
-
----
-
-<p align="center">
-  <b>🧠 Scan Smarter. Recon Deeper. Learn Ethically.</b><br/>
-  <img src="https://readme-typing-svg.herokuapp.com?center=true&width=460&lines=Built+for+Cyber+Explorers;Built+for+Real-Time+Intel;Open+Source+and+Modular" alt="Typing SVG" />
-</p>
-
----
-
-## 🏅 GitHub Badges & Stats
-
-![Repo Size](https://img.shields.io/github/repo-size/morningstarxcdcode/PORT-SCANNER?color=orange&style=for-the-badge)
-![Languages](https://img.shields.io/github/languages/count/morningstarxcdcode/PORT-SCANNER?style=for-the-badge)
-![Top Language](https://img.shields.io/github/languages/top/morningstarxcdcode/PORT-SCANNER?color=yellow&style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/morningstarxcdcode/PORT-SCANNER?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/morningstarxcdcode/PORT-SCANNER?style=for-the-badge&color=blue)
-
-### 📊 GitHub Activity Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=morningstarxcdcode&show_icons=true&theme=tokyonight&hide_border=true&custom_title=🚀%20Dev%20Stats)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=morningstarxcdcode&layout=compact&theme=tokyonight)
-
----
-
-## 🖼️ Screenshots & Live Demos
+## 📸 Screenshots & Live Demos
 
 ### 🎞️ GUI in Action
->
-> A quick look at the user-friendly graphical interface built with Python!
 
-![GUI Demo](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/YOUR_IMAGE_ID)
+**What to Showcase:**
+- The main dashboard displaying real-time scan results.
+- Interactive elements like buttons or menus.
+- Any dynamic graphs or charts representing network activity.
+
+**How to Create:**
+- Use screen recording tools like **Gifox** (macOS) or **Peek** (Linux) to capture the GUI in action.
+- Keep the recording concise (5-10 seconds) focusing on key interactions.
+- Optimize the GIF to be under 10MB for smooth loading on GitHub.
+
+**Example Placeholder:**
+```markdown
+![GUI Demo](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/gui-demo.gif)
+```
 
 ---
 
 ### 🛰️ Live Network Scan Detection
->
-> Real-time scanning detection using `nmap` and Shodan API!
 
-![Live Scanner Demo](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/YOUR_IMAGE_ID)
+**What to Showcase:**
+- Terminal output during a live scan.
+- Detection of open ports and services.
+- Integration with Shodan API displaying device information.
+
+**How to Create:**
+- Record your terminal session using **asciinema** and convert it to an animated SVG using **svg-term-cli**.
+- Alternatively, use screen recording tools to capture the terminal output and convert it to a GIF.
+
+**Example Placeholder:**
+```markdown
+![Live Scan](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/live-scan.gif)
+```
 
 ---
 
 ### 📁 Auto Logs + Threat Reports
->
-> Here’s how auto logs get saved and threats are reported!
 
-![Log Report Example](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/YOUR_IMAGE_ID)
+**What to Showcase:**
+- A sample of the generated CSV or PDF report.
+- Highlighted sections indicating detected threats or anomalies.
+- The process of exporting or viewing reports within the application.
+
+**How to Create:**
+- Take high-resolution screenshots of the reports.
+- Annotate or highlight key sections to draw attention.
+- Ensure sensitive information is redacted or anonymized.
+
+**Example Placeholder:**
+```markdown
+![Threat Report](https://github.com/morningstarxcdcode/PORT-SCANNER/assets/YOUR_USERNAME/threat-report.png)
+```
 
 ---
+
+## 🐍 GitHub Contribution Snake Animation
+
+Add a dynamic snake animation to your README to showcase your GitHub activity in a fun way.
+
+**Steps:**
+1. **Set Up the Workflow:**
+   - Navigate to your repository's **Actions** tab.
+   - Click on **New Workflow** and choose **set up a workflow yourself**.
+   - Replace the content with the following:
+
+     ```yaml
+     name: Generate Snake Animation
+
+     on:
+       schedule:
+         - cron: "0 0 * * *"  # Runs daily at midnight
+       workflow_dispatch:
+
+     jobs:
+       build:
+         runs-on: ubuntu-latest
+         steps:
+           - uses: Platane/snk@master
+             with:
+               github_user_name: YOUR_USERNAME
+               outputs: dist/github-contribution-grid-snake.svg
+           - uses: crazy-max/ghaction-github-pages@v2
+             with:
+               target_branch: output
+               build_dir: dist
+             env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     ```
+
+   - Replace `YOUR_USERNAME` with your GitHub username.
+
+2. **Add to README:**
+   - After the workflow runs successfully, add the following to your `README.md`:
+
+     ```markdown
+     ![Snake animation](https://github.com/YOUR_USERNAME/YOUR_USERNAME/blob/output/github-contribution-grid-snake.svg)
+     ```
+
+   - Replace `YOUR_USERNAME` with your GitHub username.
+
+This animation will display your contributions in a snake-like pattern, adding a dynamic visual to your profile.
+
+---
+
+## 📂 Assets Directory Structure
+
+Organize your assets for clarity and maintainability:
+
+```
+PORT-SCANNER/
+├── assets/
+│   ├── gui-demo.gif
+│   ├── live-scan.gif
+│   ├── threat-report.png
+│   └── github-contribution-grid-snake.svg
+├── README.md
+└── ...
+```
+
+---
+
+## 🛠️ Tools for Creating Visuals
+
+- **Gifox (macOS):** For high-quality screen recordings.
+- **Peek (Linux):** Simple GIF recorder for Linux.
+- **asciinema:** Record terminal sessions.
+- **svg-term-cli:** Convert asciinema recordings to SVG animations.
+- **ImageOptim / TinyPNG:** Compress images without losing quality.
+
+---
+
+## 📦 Final Touches
+
+- Ensure all media files are optimized for web (preferably under 10MB).
+- Use descriptive alt texts for accessibility.
+- Regularly update visuals to reflect the latest features.
+
+By incorporating these enhancements, your `PORT-SCANNER` README will not only be informative but also visually engaging, capturing the attention of users and contributors alike.
