@@ -1,5 +1,5 @@
 import unittest
-from port_scanner import scan_ports
+from scanner.port_scanner import scan_ports
 
 class TestPortScanner(unittest.TestCase):
 
