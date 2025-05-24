@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "network-security-scanner"
+version = "2.0.0"
+description = "Modern Cross-Platform Network Security Scanner"
+authors = ["morningstarxcdcode"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+PyQt6 = "^6.6.0"
+pyqtgraph = "^1.0.0"
+numpy = "^1.24.0"
+scikit-learn = "^1.3.0"
+asyncio = "^3.4.3"
+aiohttp = "^3.9.0"
+cryptography = "^41.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
